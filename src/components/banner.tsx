@@ -35,7 +35,7 @@ const Banner = (props: Banner) => {
       <div className="bg-red-900 text-5xl font-bold text-white p-10 flex items-center justify-center flex-row space-x-20 w-full">
         <div className="flex-col space-y-10 text-center">
           <div>{name}</div>
-          <div>{renderPrettyAddress(address)}</div>
+          <div>"Hinkle Roofing has the products and services that can help you create the home you’ve always wanted, without all the work, from top to bottom."</div>
         </div>
         {children}
       </div>

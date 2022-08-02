@@ -35,7 +35,7 @@ const Header = () => {
       <div className="centered-container">
         <nav className="py-6 flex items-center justify-between">
           <img
-            src="https://cdn.fs.brandfolder.com/cache=expiry:604800/deY3VGFpSjC761Abjbfc"
+            src="https://www.hinkleroofing.com/wp-content/uploads/2019/07/HinkleRoofing-logo.png"
             width="50"
             height="50"
           ></img>
