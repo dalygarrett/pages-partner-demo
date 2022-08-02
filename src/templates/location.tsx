@@ -15,6 +15,8 @@ import Contact from "../components/contact";
 import List from "../components/list";
 import Hours from "../components/hours";
 import StaticMap from "../components/static-map";
+import Card from "../components/card";
+import Faqs from "../components/faqs";
 import "../index.css";
 import {
   Template,
@@ -53,6 +55,8 @@ export const config: TemplateConfig = {
       "c_featuredFAQs.answer",
       "c_offerings.name",
       "c_offerings.richTextDescription",
+      "photoGallery",
+      "paymentOptions",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -143,34 +147,29 @@ const Location: Template<TemplateRenderProps> = ({
     <>
       <PageLayout _site={_site}>
         <Banner name={name} address={address} openTime={openTime}>
-          <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
-            <div className="text-black text-base">Visit Us Today!</div>
-            <Cta
-              buttonText="Get Directions"
-              url="http://google.com"
-              style="primary-cta"
-            />
-          </div>
         </Banner>
         <div className="centered-container">
           <div className="section">
             <div className="grid grid-cols-3 gap-x-10 gap-y-10">
-              <div className="bg-gray-100 p-5 space-y-12">
+              <div className="col-span-0.5 bg-gray-100 p-5 space-y-12">
                 <Contact address={address} phone={mainPhone}></Contact>
                 {c_offerings.name && <List list={c_offerings.name}></List>}
               </div>
-              <div className="col-span-2 pt-5 space-y-10">
-                <div>
+              <div className="col-span-1 pt-3 space-y-5 content-center">
                   {hours && <Hours title={"Hours of Operation"} hours={hours} />}
-                </div>
+              </div>
+              <div className="col-span-1.5 space-y-10 border-4 border-red-600 rounded-md">
                 {geocodedCoordinate && (
                   <StaticMap
-                    latitude={geocodedCoordinate.latitude}
-                    longitude={geocodedCoordinate.longitude}
+                   latitude={geocodedCoordinate.latitude}
+                   longitude={geocodedCoordinate.longitude}
                   ></StaticMap>
                 )}
               </div>
             </div>
+          </div>
+          <div className="section">
+            <Faqs faqs={c_featuredFAQs}></Faqs>
           </div>
         </div>
       </PageLayout>

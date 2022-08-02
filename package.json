@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "fetch-everywhere": "^1.0.5",
+    "markdown-to-jsx": "^7.1.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

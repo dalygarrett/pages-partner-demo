@@ -45,7 +45,7 @@ const Header = () => {
           ></img>
           <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div>
           <div className="space-x-5">
-            <Cta buttonText="Call Now" url="#" style="primary-cta"></Cta>
+            <Cta buttonText="Get a Quote!" url="#" style="primary-cta"></Cta>
           </div>
         </nav>
       </div>

@@ -27,15 +27,15 @@ const Contact = (props: any) => {
   return (
     <>
       <div className="grid gap-y-5">
-        <div className="text-xl font-semibold">Contact</div>
+        <div className="text-xl font-bold">Contact</div>
         <div className="grid gap-y-3">
-          <div className="">{renderPrettyAddress(address)}</div>
-          <div>
-            <a href="#">{phone}</a>
-          </div>
+          <div className="font-semibold">{renderPrettyAddress(address)}</div>
         </div>
-        <div className="w-30">
-          <Cta buttonText="Order Online" url="#" style="primary-cta"></Cta>
+        <div className="w-30 space-y-10">
+          <Cta buttonText="Call Now" url="#" style="primary-cta"></Cta>
+          <div>
+            <Cta buttonText="Get Directions" url="#" style="primary-cta"></Cta>
+          </div>
         </div>
       </div>
     </>
