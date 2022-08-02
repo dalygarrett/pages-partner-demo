@@ -15,6 +15,10 @@ const links: Link[] = [
     label: "About",
     url: "/turtlehead-tacos",
   },
+  {
+    label: "Reviews",
+    url: "/",
+  }
 ];
 
 const Header = () => {
@@ -35,15 +39,10 @@ const Header = () => {
             width="50"
             height="50"
           ></img>
-          <div className="text-2xl font-semibold">Turtlehead Tacos</div>
+          <div className="text-2xl font-semibold">Hinkle Roofing</div>
           <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div>
           <div className="space-x-5">
-            <Cta buttonText="Order Pickup" url="#" style="primary-cta"></Cta>
-            <Cta
-              buttonText="Order Delivery"
-              url="#"
-              style="secondary-cta"
-            ></Cta>
+            <Cta buttonText="Call Now" url="#" style="primary-cta"></Cta>
           </div>
         </nav>
       </div>
