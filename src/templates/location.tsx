@@ -48,6 +48,11 @@ export const config: TemplateConfig = {
       "slug",
       "geocodedCoordinate",
       "services",
+      "emails",
+      "c_featuredFAQs.question",
+      "c_featuredFAQs.answer",
+      "c_offerings.name",
+      "c_offerings.richTextDescription",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
