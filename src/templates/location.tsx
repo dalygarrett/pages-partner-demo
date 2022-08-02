@@ -135,6 +135,8 @@ const Location: Template<TemplateRenderProps> = ({
     mainPhone,
     geocodedCoordinate,
     services,
+    c_offerings,
+    c_featuredFAQs,
   } = document;
 
   return (
@@ -155,11 +157,11 @@ const Location: Template<TemplateRenderProps> = ({
             <div className="grid grid-cols-3 gap-x-10 gap-y-10">
               <div className="bg-gray-100 p-5 space-y-12">
                 <Contact address={address} phone={mainPhone}></Contact>
-                {services && <List list={services}></List>}
+                {c_offerings.name && <List list={c_offerings.name}></List>}
               </div>
               <div className="col-span-2 pt-5 space-y-10">
                 <div>
-                  {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
+                  {hours && <Hours title={"Hours of Operation"} hours={hours} />}
                 </div>
                 {geocodedCoordinate && (
                   <StaticMap

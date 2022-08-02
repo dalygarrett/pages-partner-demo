@@ -12,6 +12,10 @@ const links: Link[] = [
     url: "/",
   },
   {
+    label: "Services",
+    url: "/",
+  },
+  {
     label: "About",
     url: "/turtlehead-tacos",
   },
@@ -36,10 +40,9 @@ const Header = () => {
         <nav className="py-6 flex items-center justify-between">
           <img
             src="https://www.hinkleroofing.com/wp-content/uploads/2019/07/HinkleRoofing-logo.png"
-            width="50"
-            height="50"
+            width="200"
+            height="200"
           ></img>
-          <div className="text-2xl font-semibold">Hinkle Roofing</div>
           <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div>
           <div className="space-x-5">
             <Cta buttonText="Call Now" url="#" style="primary-cta"></Cta>
