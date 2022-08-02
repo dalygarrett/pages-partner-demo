@@ -151,14 +151,14 @@ const Location: Template<TemplateRenderProps> = ({
         <div className="centered-container">
           <div className="section">
             <div className="grid grid-cols-3 gap-x-10 gap-y-10">
-              <div className="col-span-0.5 bg-gray-100 p-5 space-y-12">
+              <div className="bg-gray-200 p-4 rounded-lg drop-shadow-md space-y-7">
                 <Contact address={address} phone={mainPhone}></Contact>
                 {c_offerings.name && <List list={c_offerings.name}></List>}
               </div>
               <div className="col-span-1 pt-3 space-y-5 content-center">
                   {hours && <Hours title={"Hours of Operation"} hours={hours} />}
               </div>
-              <div className="col-span-1.5 space-y-10 border-4 border-red-600 rounded-md">
+              <div className="col-span-1.5 space-y-10 border-4 border-gray-200 rounded-md">
                 {geocodedCoordinate && (
                   <StaticMap
                    latitude={geocodedCoordinate.latitude}
