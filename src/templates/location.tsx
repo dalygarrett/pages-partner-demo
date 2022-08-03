@@ -17,6 +17,7 @@ import Hours from "../components/hours";
 import StaticMap from "../components/static-map";
 import Card from "../components/card";
 import Faqs from "../components/faqs";
+import offerings from "../components/offerings";
 import "../index.css";
 import {
   Template,
@@ -158,7 +159,7 @@ const Location: Template<TemplateRenderProps> = ({
               <div className="col-span-1 pt-3 space-y-5 content-center">
                   {hours && <Hours title={"Hours of Operation"} hours={hours} />}
               </div>
-              <div className="col-span-1.5 space-y-10 border-4 border-gray-200 rounded-md">
+              <div className="col-span-1.5 space-y-10 border-4 border-gray-200 rounded-lg drop-shadow-md">
                 {geocodedCoordinate && (
                   <StaticMap
                    latitude={geocodedCoordinate.latitude}
@@ -170,6 +171,9 @@ const Location: Template<TemplateRenderProps> = ({
           </div>
           <div className="section">
             <Faqs faqs={c_featuredFAQs}></Faqs>
+          </div>
+          <div className="section">
+            <offerings offerings={c_offerings}></offerings>
           </div>
         </div>
       </PageLayout>
