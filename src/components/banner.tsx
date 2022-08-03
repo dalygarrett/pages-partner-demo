@@ -10,6 +10,7 @@ export type Address = {
 
 type Banner = {
   name?: string;
+  description?: string;
   address?: Address;
   openTime?: string;
   children?: React.ReactNode;
@@ -37,6 +38,7 @@ const Banner = (props: Banner) => {
           <div>{name}</div>
           <div className="text-2xl font-bold text-white p-6 flex items-center justify-center flex-row space-x-20 w-full">
             <div>Hinkle Roofing has the products and services that can help you create the home you’ve always wanted, without all the work, from top to bottom.</div>
+            <div>{description}</div>
           </div>
         </div>
         {children}

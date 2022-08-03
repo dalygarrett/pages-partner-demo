@@ -51,6 +51,7 @@ export const config: TemplateConfig = {
       "hours",
       "slug",
       "geocodedCoordinate",
+      "description",
       "services",
       "emails",
       "c_featuredFAQs.question",
