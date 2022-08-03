@@ -143,6 +143,7 @@ const Location: Template<TemplateRenderProps> = ({
     services,
     c_offerings,
     c_featuredFAQs,
+    paymentOptions,
   } = document;
 
   return (
@@ -171,12 +172,12 @@ const Location: Template<TemplateRenderProps> = ({
             </div>
           </div>
           <div className="section">
-            <Faqs faqs={c_featuredFAQs}></Faqs>
-          </div>
-          <div className="section">
             <Offerings 
               offerings={c_offerings}
             ></Offerings>
+          </div>
+          <div className="section">
+            <Faqs faqs={c_featuredFAQs}></Faqs>
           </div>
         </div>
       </PageLayout>
