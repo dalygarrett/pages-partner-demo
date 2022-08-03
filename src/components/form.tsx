@@ -1,29 +1,55 @@
-import * as React from "react";
-import { useFormik } from 'formik';
+import 'react-app-polyfill/ie11';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Formik, Field, Form, FormikHelpers } from 'formik';
 
-const SignupForm = () => {
-  // Pass the useFormik() hook initial form values and a submit function that will
-  // be called when the form is submitted
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-    },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
+interface Values {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
+const App = () => {
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="email">Email Address</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
+    <div>
+      <h1>Signup</h1>
+      <Formik
+        initialValues={{
+          firstName: '',
+          lastName: '',
+          email: '',
+        }}
+        onSubmit={(
+          values: Values,
+          { setSubmitting }: FormikHelpers<Values>
+        ) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 500);
+        }}
+      >
+        <Form>
+          <label htmlFor="firstName">First Name</label>
+          <Field id="firstName" name="firstName" placeholder="John" />
 
-      <button type="submit">Submit</button>
-    </form>
+          <label htmlFor="lastName">Last Name</label>
+          <Field id="lastName" name="lastName" placeholder="Doe" />
+
+          <label htmlFor="email">Email</label>
+          <Field
+            id="email"
+            name="email"
+            placeholder="john@acme.com"
+            type="email"
+          />
+
+          <button type="submit">Submit</button>
+        </Form>
+      </Formik>
+    </div>
   );
 };
+
+ReactDOM.render(<App />, document.getElementById('root'));
+export default App;
