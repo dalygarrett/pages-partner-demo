@@ -143,6 +143,7 @@ const Location: Template<TemplateRenderProps> = ({
     mainPhone,
     description,
     geocodedCoordinate,
+    c_bannerImage,
     services,
     c_offerings,
     c_featuredFAQs,
@@ -152,7 +153,7 @@ const Location: Template<TemplateRenderProps> = ({
   return (
     <>
       <PageLayout _site={_site}>
-        <Banner name={name} description={description} openTime={openTime}>
+        <Banner name={name} description={description} openTime={openTime} >
         </Banner>
         <div className="centered-container">
           <div className="section">
