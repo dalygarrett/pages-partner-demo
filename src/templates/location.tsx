@@ -47,7 +47,6 @@ export const config: TemplateConfig = {
       "name",
       "address",
       "mainPhone",
-      "description",
       "hours",
       "slug",
       "geocodedCoordinate",
