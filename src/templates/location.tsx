@@ -56,7 +56,7 @@ export const config: TemplateConfig = {
       "c_featuredFAQs.answer",
       "c_offerings.name",
       "c_offerings.richTextDescription",
-      "c_offerings.primaryPhoto.url",
+      "c_offerings.primaryPhoto",
       "photoGallery",
       "paymentOptions",
     ],
