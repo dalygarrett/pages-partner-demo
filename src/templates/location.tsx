@@ -17,7 +17,7 @@ import Hours from "../components/hours";
 import StaticMap from "../components/static-map";
 import Card from "../components/card";
 import Faqs from "../components/faqs";
-import offerings from "../components/offerings";
+import Offerings from "../components/offerings";
 import "../index.css";
 import {
   Template,
@@ -56,6 +56,7 @@ export const config: TemplateConfig = {
       "c_featuredFAQs.answer",
       "c_offerings.name",
       "c_offerings.richTextDescription",
+      "c_offerings.primaryPhoto.url",
       "photoGallery",
       "paymentOptions",
     ],
@@ -173,7 +174,7 @@ const Location: Template<TemplateRenderProps> = ({
             <Faqs faqs={c_featuredFAQs}></Faqs>
           </div>
           <div className="section">
-            <offerings offerings={c_offerings}></offerings>
+            <Offerings offerings={c_offerings}></Offerings>
           </div>
         </div>
       </PageLayout>
