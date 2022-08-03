@@ -18,6 +18,7 @@ import StaticMap from "../components/static-map";
 import Card from "../components/card";
 import Faqs from "../components/faqs";
 import Offerings from "../components/offerings";
+import Form from "../components/form"
 import "../index.css";
 import {
   Template,
@@ -30,6 +31,7 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import PageLayout from "../components/page-layout";
+import { Formik } from "formik";
 
 /**
  * Required when Knowledge Graph data is used for a template.
