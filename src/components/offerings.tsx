@@ -2,12 +2,15 @@ import * as React from "react";
 import Markdown from 'markdown-to-jsx';
 
 const Offerings = (props:any) => {
-    const { offerings } = props;
+    const { offerings, height, width } = props;
     const offeringDivs = offerings.map((offering:any) => (
-      <div className="bg-gray-200 p-4 rounded-lg drop-shadow-md space-y-5">
-        <div className="w-6/12 sm:w-4/12 px-4">
+      <div className="bg-gray-100 p-4 rounded-lg drop-shadow-md space-y-5">
+        <div>
             <img
-                src={offering.image}
+                height={height}
+                src={offering.primaryPhoto.image.url} // use normal <img> attributes as props
+                className="image rounded"
+                width={width}
             >
             </img>
         </div>

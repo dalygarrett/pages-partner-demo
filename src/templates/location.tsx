@@ -153,7 +153,7 @@ const Location: Template<TemplateRenderProps> = ({
         <div className="centered-container">
           <div className="section">
             <div className="grid grid-cols-3 gap-x-10 gap-y-10">
-              <div className="bg-gray-200 p-4 rounded-lg drop-shadow-md space-y-7">
+              <div className="bg-gray-100 p-4 rounded-lg drop-shadow-md space-y-7">
                 <Contact address={address} phone={mainPhone}></Contact>
                 {c_offerings.name && <List list={c_offerings.name}></List>}
               </div>
@@ -174,7 +174,9 @@ const Location: Template<TemplateRenderProps> = ({
             <Faqs faqs={c_featuredFAQs}></Faqs>
           </div>
           <div className="section">
-            <Offerings offerings={c_offerings}></Offerings>
+            <Offerings 
+              offerings={c_offerings}
+            ></Offerings>
           </div>
         </div>
       </PageLayout>
