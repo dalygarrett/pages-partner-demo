@@ -18,7 +18,7 @@ import StaticMap from "../components/static-map";
 import Card from "../components/card";
 import Faqs from "../components/faqs";
 import Offerings from "../components/offerings";
-import Form from "../components/form"
+import Basic from "../components/form";
 import "../index.css";
 import {
   Template,
@@ -31,7 +31,6 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import PageLayout from "../components/page-layout";
-import { Formik } from "formik";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -180,6 +179,9 @@ const Location: Template<TemplateRenderProps> = ({
           </div>
           <div className="section">
             <Faqs faqs={c_featuredFAQs}></Faqs>
+          </div>
+          <div className="space-y-10 m-auto bg-gray-100 w-96 rounded-lg drop-shadow-md">
+            <Basic></Basic>
           </div>
         </div>
       </PageLayout>
