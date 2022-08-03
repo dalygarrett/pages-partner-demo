@@ -58,6 +58,7 @@ export const config: TemplateConfig = {
       "c_offerings.name",
       "c_offerings.richTextDescription",
       "c_offerings.primaryPhoto",
+      "c_bannerImage",
       "photoGallery",
       "paymentOptions",
     ],
@@ -140,6 +141,7 @@ const Location: Template<TemplateRenderProps> = ({
     openTime,
     hours,
     mainPhone,
+    description,
     geocodedCoordinate,
     services,
     c_offerings,
@@ -150,7 +152,7 @@ const Location: Template<TemplateRenderProps> = ({
   return (
     <>
       <PageLayout _site={_site}>
-        <Banner name={name} address={address} openTime={openTime}>
+        <Banner name={name} description={description} openTime={openTime}>
         </Banner>
         <div className="centered-container">
           <div className="section">
