@@ -63,7 +63,6 @@ export const config: TemplateConfig = {
       "photoGallery",
       "paymentOptions",
       "logo",
-      "ce_site",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
