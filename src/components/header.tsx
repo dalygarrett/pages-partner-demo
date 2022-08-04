@@ -40,7 +40,7 @@ const Header = (props:any) => {
       <div className="centered-container">
         <nav className="py-6 flex items-center justify-between">
           <img
-            src={logo}
+            src={logo.image.url}
             width="200"
             height="200"
           ></img>
