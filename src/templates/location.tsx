@@ -154,7 +154,7 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout logo={logo.image.url}>
+      <PageLayout logo={logo}>
         <Banner name={name} description={description} c_bannerImage={c_bannerImage}>
         </Banner>
         <div className="centered-container">
