@@ -12,7 +12,6 @@ import * as React from "react";
 import Banner from "../components/banner";
 import Cta from "../components/cta";
 import Contact from "../components/contact";
-import Header, { Link } from "../components/header";
 import List from "../components/list";
 import Hours from "../components/hours";
 import StaticMap from "../components/static-map";
@@ -154,12 +153,7 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <div className="centered-container">
-      <Header
-          links={_site.c_header}
-          logo={_site.logo}
-      ></Header>
-      </div>
+      <PageLayout _site={_site}>
         <Banner name={name} description={description} c_bannerImage={c_bannerImage}>
         </Banner>
         <div className="centered-container">
@@ -194,6 +188,7 @@ const Location: Template<TemplateRenderProps> = ({
             <Basic></Basic>
           </div>
         </div>
+      </PageLayout>
     </>
   );
 };
