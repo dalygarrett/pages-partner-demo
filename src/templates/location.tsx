@@ -82,7 +82,7 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return `location/${document.id.toString()}`;
+  return `index.html`;
 };
 
 /**
@@ -149,11 +149,12 @@ const Location: Template<TemplateRenderProps> = ({
     c_offerings,
     c_featuredFAQs,
     paymentOptions,
+    logo
   } = document;
 
   return (
     <>
-      <PageLayout _site={_site}>
+      <PageLayout logo={logo.image.url}>
         <Banner name={name} description={description} c_bannerImage={c_bannerImage}>
         </Banner>
         <div className="centered-container">

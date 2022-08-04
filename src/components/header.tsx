@@ -25,7 +25,8 @@ const links: Link[] = [
   }
 ];
 
-const Header = () => {
+const Header = (props:any) => {
+  const { logo } = props;
   const linkDoms = links.map((link) => (
     <div key={link.label}>
       <a href={link.url} target="_blank" rel="noreferrer">
@@ -39,7 +40,7 @@ const Header = () => {
       <div className="centered-container">
         <nav className="py-6 flex items-center justify-between">
           <img
-            src="https://www.hinkleroofing.com/wp-content/uploads/2019/07/HinkleRoofing-logo.png"
+            src={logo}
             width="200"
             height="200"
           ></img>
