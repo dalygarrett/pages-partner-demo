@@ -59,6 +59,7 @@ export const config: TemplateConfig = {
       "c_offerings.richTextDescription",
       "c_offerings.primaryPhoto",
       "c_bannerImage",
+      "c_primaryColor",
       "photoGallery",
       "paymentOptions",
       "logo",
@@ -149,6 +150,7 @@ const Location: Template<TemplateRenderProps> = ({
     c_offerings,
     c_featuredFAQs,
     paymentOptions,
+    c_primaryColor,
     logo
   } = document;
 
