@@ -11,9 +11,9 @@
 }
 
 .primary-cta {
-  @apply bg-red-600 hover:bg-red-400;
+  @apply bg-gray-400 hover:bg-gray-200;
 }
 
 .secondary-cta {
-  @apply bg-red-600 hover:bg-red-400;
+  @apply bg-gray-400 hover:bg-gray-200;
 }

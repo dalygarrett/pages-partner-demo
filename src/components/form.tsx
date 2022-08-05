@@ -49,7 +49,7 @@ const Basic = () => (
         <Field id="comments" name="comments" placeholder="Type here..." className="bg-gray-100 border-2"/>
         </div>
 
-        <div className="py-4 px-6 font-bold text-center text-xl text-white bg-contain bg-red-600 rounded-lg">
+        <div className="py-4 px-6 font-bold text-center text-xl text-white bg-contain bg-gray-400 rounded-lg">
             <button type="submit">Submit</button>
         </div>
       </Form>
