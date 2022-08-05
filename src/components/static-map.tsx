@@ -3,15 +3,17 @@ import * as React from "react";
 type Coordinates = {
   latitude: string;
   longitude: string;
+  backgroundColor: string;
 };
 
 const StaticMap = (props: Coordinates) => {
-  const { latitude, longitude } = props;
+  const { latitude, longitude, backgroundColor } = props;
 
   return (
     <>
       <img
-        className="w-full"
+        className="w-full border-8 rounded-xl"
+        style={{ borderColor: backgroundColor }}
         width="300"
         height="200"
         src={

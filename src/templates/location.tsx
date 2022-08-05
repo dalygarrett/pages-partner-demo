@@ -169,9 +169,10 @@ const Location: Template<TemplateRenderProps> = ({
               <div className="col-span-1 pt-3 space-y-5 content-center">
                   {hours && <Hours title={"Hours of Operation"} hours={hours} />}
               </div>
-              <div className="col-span-1.5 space-y-10 border-4 border-gray-200 rounded-lg drop-shadow-md">
+              <div className="col-span-1.5 space-y-10 rounded-lg drop-shadow-md">
                 {geocodedCoordinate && (
                   <StaticMap
+                   backgroundColor={c_primaryColor}
                    latitude={geocodedCoordinate.latitude}
                    longitude={geocodedCoordinate.longitude}
                   ></StaticMap>
