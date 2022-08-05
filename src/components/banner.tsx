@@ -36,7 +36,7 @@ const Banner = (props: Banner) => {
     <>
       <div className="bg-no-repeat bg-center text-5xl font-bold text-white p-12 flex items-center justify-center flex-row space-x-20 w-full" 
       style={{backgroundImage: `url('${c_bannerImage.url}')`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
-        <div className="flex-col backdrop-brightness-75 space-y-5 text-center font-extrabold outline-2">
+        <div className="flex-col backdrop-brightness-50 space-y-5 text-center font-extrabold outline-2">
           <div>{name}</div>
           <div className="text-2xl font-bold text-white p-6 flex items-center justify-center flex-row space-x-20 w-full">
             <div>{description}</div>
