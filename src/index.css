@@ -10,10 +10,3 @@
   @apply mt-8 mb-16;
 }
 
-.primary-cta {
-  @apply bg-gray-400 hover:bg-gray-200;
-}
-
-.secondary-cta {
-  @apply bg-gray-400 hover:bg-gray-200;
-}

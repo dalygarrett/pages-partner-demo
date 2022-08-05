@@ -3,11 +3,12 @@ import * as React from "react";
 type Cta = {
   buttonText: string;
   url: string;
+  color?: string
   style?: string;
 };
 
 const Cta = (props: Cta) => {
-  const { buttonText, url, style } = props;
+  const { buttonText, url, style, color } = props;
 
   return (
     <a
