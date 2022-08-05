@@ -12,7 +12,7 @@ type Banner = {
   name?: string;
   description?: string;
   address?: Address;
-  c_bannerImage: any;
+  c_bannerImage?: any;
   style?: React.CSSProperties;
   children?: React.ReactNode;
 };
