@@ -156,14 +156,14 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout logo={logo}>
+      <PageLayout logo={logo} color={c_primaryColor}>
         <Banner name={name} description={description} c_bannerImage={c_bannerImage}>
         </Banner>
         <div className="centered-container">
           <div className="section">
             <div className="grid grid-cols-3 gap-x-10 gap-y-10">
               <div className="bg-gray-100 p-4 rounded-lg drop-shadow-md space-y-7">
-                <Contact address={address} phone={mainPhone}></Contact>
+                <Contact address={address} phone={mainPhone} color={c_primaryColor}></Contact>
                 {c_offerings.name && <List list={c_offerings.name}></List>}
               </div>
               <div className="col-span-1 pt-3 space-y-5 content-center">

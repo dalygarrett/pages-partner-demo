@@ -50,7 +50,7 @@ const Basic = () => (
         </div>
 
         <div className="py-4 px-6 font-bold text-center text-xl text-white bg-contain bg-gray-400 rounded-lg">
-            <button type="submit">Submit</button>
+            <button type="submit" >Submit</button>
         </div>
       </Form>
     </Formik>

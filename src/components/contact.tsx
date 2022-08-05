@@ -22,7 +22,7 @@ const renderPrettyAddress = (address: Address) => {
 };
 
 const Contact = (props: any) => {
-  const { address, phone } = props;
+  const { address, phone, color} = props;
 
   return (
     <>
@@ -32,9 +32,9 @@ const Contact = (props: any) => {
           <div className="font-semibold">{renderPrettyAddress(address)}</div>
         </div>
         <div className="w-30 space-y-10">
-          <Cta buttonText="Call Now" url="#" style="primary-cta"></Cta>
+          <Cta buttonText="Call Now" url="#" backgroundColor={color}></Cta>
           <div>
-            <Cta buttonText="Get Directions" url="#" style="primary-cta"></Cta>
+            <Cta buttonText="Get Directions" url="#" backgroundColor={color}></Cta>
           </div>
         </div>
       </div>

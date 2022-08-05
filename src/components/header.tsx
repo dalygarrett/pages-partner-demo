@@ -26,7 +26,7 @@ const links: Link[] = [
 ];
 
 const Header = (props:any) => {
-  const { logo } = props;
+  const { logo, color } = props
   const linkDoms = links.map((link) => (
     <div key={link.label}>
       <a href={link.url} target="_blank" rel="noreferrer">
@@ -34,6 +34,7 @@ const Header = (props:any) => {
       </a>
     </div>
   ));
+
 
   return (
     <>
@@ -46,7 +47,7 @@ const Header = (props:any) => {
           ></img>
           <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div>
           <div className="space-x-5">
-            <Cta buttonText="Get a Quote!" url="#" style="primary-cta"></Cta>
+            <Cta buttonText="Get a Quote!" url="#" backgroundColor={color}></Cta>
           </div>
         </nav>
       </div>
