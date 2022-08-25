@@ -20,7 +20,7 @@ import {
  
  
   export const getPath: GetPath<TemplateProps> = ({document}) => {
-    return `index.html`;
+    return `index`;
  };
  
  export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({relativePrefixToRoot, path, document}): HeadConfig => {

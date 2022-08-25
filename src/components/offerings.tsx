@@ -14,7 +14,7 @@ const Offerings = (props:any) => {
             >
             </img>
         </div>
-        <a href={offerings.c_slug}>
+        <a href={offering.c_slug}>
           <h3 className="text-lg font-semibold">{offering.name}</h3>
         </a>
         <p><Markdown>{offering.richTextDescription}</Markdown></p>
