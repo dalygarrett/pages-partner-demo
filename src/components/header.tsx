@@ -12,8 +12,8 @@ const links: Link[] = [
     url: "/index",
   },
   {
-    label: "About",
-    url: "/about",
+    label: "About Us",
+    url: "/aboutus",
   },
 ];
 
