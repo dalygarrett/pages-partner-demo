@@ -12,17 +12,9 @@ const links: Link[] = [
     url: "/index",
   },
   {
-    label: "Services",
-    url: "/",
-  },
-  {
     label: "About",
     url: "/about",
   },
-  {
-    label: "Reviews",
-    url: "/",
-  }
 ];
 
 const Header = (props:any) => {
