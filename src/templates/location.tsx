@@ -43,7 +43,6 @@ export const config: TemplateConfig = {
     fields: [
       "id",
       "uid",
-      "meta",
       "name",
       "address",
       "mainPhone",
