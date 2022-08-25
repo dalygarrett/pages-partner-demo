@@ -9,7 +9,7 @@ type Link = {
 const links: Link[] = [
   {
     label: "Home",
-    url: "/index.html",
+    url: "/index",
   },
   {
     label: "Services",
