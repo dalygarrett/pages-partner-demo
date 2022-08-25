@@ -61,6 +61,7 @@ export const config: TemplateConfig = {
       "c_primaryColor",
       "photoGallery",
       "paymentOptions",
+      "c_offerings.c_slug",
       "logo",
     ],
     // Defines the scope of entities that qualify for this stream.
