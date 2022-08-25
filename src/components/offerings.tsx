@@ -4,7 +4,7 @@ import Markdown from 'markdown-to-jsx';
 const Offerings = (props:any) => {
     const { offerings, height, width } = props;
     const offeringDivs = offerings.map((offering:any) => (
-      <div className="bg-gray-100 p-4 rounded-lg drop-shadow-md space-y-5">
+        <div className="bg-gray-100 p-4 rounded-lg drop-shadow-md space-y-5">
         <div>
             <img
                 height={height}
@@ -14,7 +14,9 @@ const Offerings = (props:any) => {
             >
             </img>
         </div>
-        <h3 className="text-lg font-semibold">{offering.name}</h3>
+        <a href={offerings.c_slug}>
+          <h3 className="text-lg font-semibold">{offering.name}</h3>
+        </a>
         <p><Markdown>{offering.richTextDescription}</Markdown></p>
       </div>
     ));
