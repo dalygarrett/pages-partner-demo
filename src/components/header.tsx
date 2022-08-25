@@ -17,7 +17,7 @@ const links: Link[] = [
   },
   {
     label: "About",
-    url: "/turtlehead-tacos",
+    url: "/about",
   },
   {
     label: "Reviews",
