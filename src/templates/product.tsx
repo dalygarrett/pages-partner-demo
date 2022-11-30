@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /**
  * This is an example of how to create a template that makes use of streams data.
  * The stream data originates from Yext's Knowledge Graph. When a template in
@@ -30,7 +31,7 @@ import {
   GetHeadConfig,
   HeadConfig,
 } from "@yext/pages";
-import PageLayout from "../components/page-layout";
+import { Image } from "@yext/pages/components";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -40,7 +41,14 @@ export const config: TemplateConfig = {
     $id: "my-stream-id-2",
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
-    fields: ["id", "slug"],
+    fields: [
+      "id",
+      "slug",
+      "name",
+      "richTextDescription",
+      "photoGallery",
+      "primaryPhoto",
+    ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
       entityTypes: ["product"],
@@ -113,12 +121,29 @@ const Location: Template<TemplateRenderProps> = ({
   path,
   document,
 }) => {
-  const { id } = document;
+  const { id, name, primaryPhoto, richTextDescription } = document;
 
   return (
-    <>
-      <h1>Product= {id} </h1>
-    </>
+    <div className="centered-container">
+      <div className="section">
+        <div className="mx-4 flex gap-3">
+          <div className="w-1/2">
+            <Image image={primaryPhoto}></Image>
+          </div>
+          <div className="w-1/2 flex flex-col justify-evenly">
+            <h1 className="text-xl font-bold">{name}</h1>
+            <div className="mt-4"> {richTextDescription}</div>
+            <div className="mt-8">
+              <Cta
+                buttonText="Buy now"
+                className="primary-cta"
+                backgroundColor={""}
+              ></Cta>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

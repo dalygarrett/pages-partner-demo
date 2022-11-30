@@ -38,7 +38,6 @@ import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
 import { BsPhone } from "react-icons/bs";
 import { Image } from "@yext/pages/components";
-import { string } from "yup";
 import Carousel from "../components/Carousel";
 import ContactUsForm from "../components/contact-us-form";
 
