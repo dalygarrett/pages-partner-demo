@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /**
  * This is an example of how to create a template that makes use of streams data.
  * The stream data originates from Yext's Knowledge Graph. When a template in
@@ -31,6 +32,15 @@ import {
   HeadConfig,
 } from "@yext/pages";
 import PageLayout from "../components/page-layout";
+import { useState } from "react";
+import HoursText from "../components/HoursText";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { IoLocationOutline } from "react-icons/io5";
+import { BsPhone } from "react-icons/bs";
+import { Image } from "@yext/pages/components";
+import { string } from "yup";
+import Carousel from "../components/Carousel";
+import ContactUsForm from "../components/contact-us-form";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -61,7 +71,7 @@ export const config: TemplateConfig = {
       "c_primaryColor",
       "photoGallery",
       "paymentOptions",
-      "c_offerings.c_slug",
+      "c_offerings.slug",
       "logo",
     ],
     // Defines the scope of entities that qualify for this stream.
@@ -136,6 +146,7 @@ const Location: Template<TemplateRenderProps> = ({
   path,
   document,
 }) => {
+  const cpy = document;
   const {
     _site,
     name,
@@ -151,45 +162,169 @@ const Location: Template<TemplateRenderProps> = ({
     c_featuredFAQs,
     paymentOptions,
     c_primaryColor,
-    logo
+    logo,
   } = document;
-
+  const [showHours, setShowHours] = useState(false);
+  const nServices = ["service 1", "service 1", "service 1"];
   return (
     <>
       <PageLayout logo={logo} color={c_primaryColor}>
-        <Banner name={name} description={description} c_bannerImage={c_bannerImage}>
-        </Banner>
         <div className="centered-container">
           <div className="section">
-            <div className="grid grid-cols-3 gap-x-10 gap-y-10">
-              <div className="bg-gray-100 p-4 rounded-lg drop-shadow-md space-y-7">
-                <Contact address={address} phone={mainPhone} color={c_primaryColor}></Contact>
-                {c_offerings.name && <List list={c_offerings.name}></List>}
+            <div className="mx-4 flex flex-col md:flex-row justify-between">
+              <div className="flex flex-col gap-3">
+                <h2 className="text-light text-2xl">{name} in</h2>
+                <h1 className="font-bold text-2xl mb-4">
+                  {address.city}, {address.region}
+                </h1>
               </div>
-              <div className="col-span-1 pt-3 space-y-5 content-center">
-                  {hours && <Hours title={"Hours of Operation"} hours={hours} />}
+              <div className=" hidden md:block">
+                <div className=" flex flex-col gap-2">
+                  <Cta
+                    buttonText="Shop now"
+                    url="#"
+                    className="primary-cta"
+                    backgroundColor={""}
+                  ></Cta>
+
+                  <Cta
+                    buttonText="Schedule appointment"
+                    url="#"
+                    className="secondary-cta"
+                    backgroundColor={""}
+                  ></Cta>
+                </div>
               </div>
-              <div className="col-span-1.5 space-y-10 rounded-lg drop-shadow-md">
+            </div>
+            <div className="flex flex-row gap-3 mt-4">
+              <div className="rounded-full">
+                <Image image={c_bannerImage}></Image>
+              </div>
+              <div className="w-full mx-4 hidden md:block">
                 {geocodedCoordinate && (
                   <StaticMap
-                   backgroundColor={c_primaryColor}
-                   latitude={geocodedCoordinate.latitude}
-                   longitude={geocodedCoordinate.longitude}
+                    latitude={geocodedCoordinate.latitude}
+                    longitude={geocodedCoordinate.longitude}
+                    backgroundColor={""}
                   ></StaticMap>
                 )}
               </div>
             </div>
+
+            <div className="flex flex-col md:flex-row px-8 gap-3 mt-4 justify-between">
+              {hours && (
+                <div className="md:ml-auto md:mr-8">
+                  <div className="flex gap-3 items-center">
+                    <HoursText document={cpy}></HoursText>
+                    <span className=" hidden md:block">
+                      {showHours ? (
+                        <BsChevronUp
+                          onClick={() => setShowHours(!showHours)}
+                          className="mt-4 hover:cursor-pointer"
+                        />
+                      ) : (
+                        <BsChevronDown
+                          onClick={() => setShowHours(!showHours)}
+                          className="mt-4 hover:cursor-pointer"
+                        />
+                      )}
+                    </span>
+                  </div>
+                  <span className=" hidden md:block">
+                    {showHours && (
+                      <div className="mt-4 ml-4">
+                        <Hours title={"Store Hours"} hours={hours} />
+                      </div>
+                    )}
+                  </span>
+                  <div className="mt-4 md:mt-12 text-center  px-16 py-2 border bg-sky-700 hover:bg-sky-600 ">
+                    <Cta
+                      buttonText="Schedule appointment"
+                      url="#"
+                      style="primary-cta"
+                      backgroundColor={""}
+                    ></Cta>
+                  </div>
+                </div>
+              )}
+              <div className="md:mr-auto md:ml-8 text-2xl text-gray-600 mt-4 w-full md:w-auto">
+                <div className="flex gap-2 w-full">
+                  <div>
+                    <IoLocationOutline className="mt-2" />
+                  </div>
+                  <div>
+                    <Contact address={address} phone=""></Contact>
+                  </div>
+                </div>
+                <div className=" md:hidden block w-auto mt-4 text-center text-lg  px-16 py-2 border bg-sky-700 hover:bg-sky-600 ">
+                  <Cta
+                    buttonText="Get directions "
+                    url="#"
+                    style="primary-cta"
+                    backgroundColor={""}
+                  ></Cta>
+                </div>
+                <div className="flex gap-3 mt-4 items-center">
+                  <div className="">
+                    <BsPhone />
+                  </div>
+                  <div>
+                    {mainPhone &&
+                      mainPhone
+                        .replace("+1", "")
+                        .replace(/\D+/g, "")
+                        .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
+                  </div>
+                </div>
+              </div>
+              <div className="md:mr-auto md:ml-8 text-2xl text-gray-600 mt-4 w-full md:w-auto">
+                <div className="text-xl font-bold mb-4">Services</div>
+                {nServices.map((item: string, index: any) => (
+                  <div key={index}>{item}</div>
+                ))}
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div className="centered-container">
           <div className="section">
-            <Offerings 
-              offerings={c_offerings}
-            ></Offerings>
-          </div>
-          <div className="section">
-            <Faqs faqs={c_featuredFAQs}></Faqs>
-          </div>
-          <div className="space-y-10 m-auto bg-gray-100 w-96 rounded-lg drop-shadow-md">
-            <Basic></Basic>
+            {description && (
+              <div className="w-full md:w-2/2 bg-gray-200 mt-4">
+                <div className="p-4 w-full mx-auto text-center mb-10 ">
+                  <h1 className="text-2xl font-bold border-b border-black mb-4 pb-4">
+                    About us
+                  </h1>
+                  <div className="bg-grey-100 text-left mt-4">
+                    {description}
+                  </div>
+                </div>
+              </div>
+            )}
+            {c_featuredFAQs && <Faqs faqs={c_featuredFAQs} />}
+            {c_offerings && (
+              <div className="w-full  mt-4">
+                <div className="p-4 w-full mx-auto text-center mb-10 ">
+                  <div className="w-full justify-center items-center text-black  ">
+                    <div>
+                      <h1 className="text-2xl font-bold  pb-4">
+                        Products offered
+                      </h1>
+                    </div>
+                  </div>
+                  <div className="bg-grey-100 locSlick ">
+                    <Carousel
+                      data={c_offerings}
+                      slidesToShow={4}
+                      type="nonAddress"
+                    ></Carousel>
+                  </div>
+                </div>
+              </div>
+            )}
+            <div className="mt-4 w-3/4 mx-auto">
+              <ContactUsForm />
+            </div>
           </div>
         </div>
       </PageLayout>

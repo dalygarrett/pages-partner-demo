@@ -1,42 +1,23 @@
 import * as React from "react";
 import Cta from "../components/cta";
-
-type Address = {
-  line1: string;
-  line2?: string;
-  city: string;
-  region: string;
-  postalCode: string;
-  countryCode: string;
-};
-
-const renderPrettyAddress = (address: Address) => {
-  return (
-    <>
-      <div>{address.line1}</div>
-      <div>
-        {address.city}, {address.region}
-      </div>
-    </>
-  );
-};
+import { Address } from "@yext/pages/components";
 
 const Contact = (props: any) => {
-  const { address, phone, color} = props;
-
+  const { address, phone } = props;
+  const { city, countryCode, line1, line2, postalCode, region } = address;
   return (
     <>
-      <div className="grid gap-y-5">
-        <div className="text-xl font-bold">Contact</div>
-        <div className="grid gap-y-3">
-          <div className="font-semibold">{renderPrettyAddress(address)}</div>
-        </div>
-        <div className="w-30 space-y-10">
-          <Cta buttonText="Call Now" url="#" backgroundColor={color}></Cta>
+      <div className="  gap-y-5">
+        <div className="  gap-y-3">
+          <div>{line1}</div>
+          {line2 && <div>{line2}</div>}
           <div>
-            <Cta buttonText="Get Directions" url="#" backgroundColor={color}></Cta>
+            {city}, {region} {postalCode}
           </div>
         </div>
+      </div>
+      <div className=" hidden md:block w-auto mt-4 text-lg  px-16 py-2 border bg-sky-700 hover:bg-sky-600 ">
+        <Cta buttonText="Get directions " url="#" style="primary-cta" backgroundColor={""}></Cta>
       </div>
     </>
   );

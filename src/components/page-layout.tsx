@@ -7,16 +7,14 @@ type PageLayout = {
   // _site?: Site;
   logo?: string;
   children?: React.ReactNode;
-  color:string;
+  color: string;
 };
 
-const PageLayout = ({logo, children, color}:PageLayout) => {
-  console.log(logo);
-
+const PageLayout = ({ logo, children, color }: PageLayout) => {
   return (
     <div className="min-h-screen">
-      <Header logo={logo} color={color}/>
-        {children}
+      <Header logo={logo} color={color} />
+      {children}
       {/* <Footer _site={_site}></Footer> */}
     </div>
   );

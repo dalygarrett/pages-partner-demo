@@ -10,3 +10,10 @@
   @apply mt-8 mb-16;
 }
 
+.primary-cta {
+  @apply w-full text-white text-center font-bold   px-16 py-2 border bg-sky-700 hover:bg-sky-600 border border-black;
+}
+
+.secondary-cta {
+  @apply text-sky-700 bg-white border px-16 py-2 w-full text-center font-bold border border-black;
+}

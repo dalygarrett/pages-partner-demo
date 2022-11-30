@@ -1,24 +1,39 @@
 import * as React from "react";
-import Markdown from 'markdown-to-jsx';
-
-const Faqs = (props:any) => {
-    const { faqs } = props;
-    const faqDivs = faqs.map((faq:any) => (
-      <div className="bg-gray-100 p-4 rounded-lg drop-shadow-md space-y-5">
-        <h3 className="text-lg font-semibold">{faq.question}</h3>
-        <p><Markdown>{faq.answer}</Markdown></p>
-      </div>
-    ));
-
+import Markdown from "markdown-to-jsx";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from "react-accessible-accordion";
+const Faqs = (props: any) => {
+  const { faqs } = props;
 
   return (
     <>
-        <div>
-            <h2 className="text-xl align-center text-center font-bold mb-4">Frequently Asked Questions</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {faqDivs}
-            </div>
-        </div>
+      <div>
+        <h2 className="text-xl align-center text-center font-bold mb-4">
+          Frequently Asked Questions
+        </h2>
+        <Accordion allowZeroExpanded>
+          {faqs.map((item: any, index: number) => (
+            <AccordionItem
+              key={index}
+              className="my-4 py-4 border-b  border-black text-left"
+            >
+              <AccordionItemHeading>
+                <AccordionItemButton>
+                  <span className="font-bold">{item.question}</span>
+                </AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel>
+                <Markdown>{item.answer}</Markdown>
+              </AccordionItemPanel>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
     </>
   );
 };

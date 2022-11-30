@@ -5,16 +5,16 @@ type Cta = {
   url?: string;
   backgroundColor: string;
   style?: any;
+  className?: any;
 };
 
 const Cta = (props: Cta) => {
-  const { buttonText, url, style, backgroundColor } = props;
+  const { buttonText, url, className } = props;
 
   return (
     <a
       href={url}
-      className={" py-4 px-6 text-base font-bold text-white rounded-lg"}
-      style={{ background: backgroundColor }}
+      className={className}
       target="_blank"
       rel="noopener noreferrer"
     >
