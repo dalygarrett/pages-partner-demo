@@ -17,3 +17,30 @@
 .secondary-cta {
   @apply text-sky-700 bg-white border px-16 py-2 w-full text-center font-bold border border-black;
 }
+.accordion__button:before {
+  content: "+";
+  float: right;
+  margin-right: 1em;
+  font-size: 2em;
+  line-height: 0.5em;
+  color: #056a37;
+}
+.accordion__button[aria-expanded="true"]::before,
+.accordion__button[aria-selected="true"]::before {
+  content: "\2014";
+}
+
+.accordion__button,
+.accordion__panel {
+  color: black !important;
+}
+
+.accordion-content {
+  transition: 0.2s ease-out;
+}
+
+.accordion__panel {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  line-height: 2;
+}
