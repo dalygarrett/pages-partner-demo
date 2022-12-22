@@ -27,6 +27,21 @@ export interface Hours {
 	reopenDate?: string,
 }
 
+export interface FrequentlyAskedQuestions {
+	question: string,
+	answer?: string,
+}
+
+export enum Type {
+	DEPARTMENT_IN = "Department In",
+	INDEPENDENT_ESTABLISHMENT_IN = "Independent Establishment In",
+}
+
+export interface GoogleEntityRelationship {
+	type: Type,
+	placeId: string,
+}
+
 export enum PickupAndDeliveryServices {
 	IN_STORE_PICKUP = "In-Store Pickup",
 	CURBSIDE_PICKUP = "Curbside Pickup",
@@ -35,6 +50,19 @@ export enum PickupAndDeliveryServices {
 	SAME_DAY_DELIVERY = "Same Day Delivery",
 	NO_CONTACT_DELIVERY = "No-Contact Delivery",
 	DELIVERY_NOT_OFFERED = "Delivery Not Offered",
+}
+
+export enum Type_1 {
+	POSTAL_CODE = "Postal Code",
+	REGION = "State/Region",
+	COUNTY = "County",
+	CITY = "City",
+	SUBLOCALITY = "Sublocality",
+}
+
+export interface ServiceAreaPlaces {
+	name?: string,
+	type?: Type_1,
 }
 
 export interface Address {
@@ -81,28 +109,37 @@ export interface EntityReference {
 }
 
 export enum C_primaryColor {
-	RED = "red",
-	CRIMSON = "crimson",
-	FIREBRICK = "firebrick",
-	DARKRED = "darkRed",
-	BLUE = "blue",
-	MEDIUMBLUE = "mediumBlue",
-	DARKBLUE = "darkBlue",
-	ROYALBLUE = "royalBlue",
-	LIGHTGRAY = "lightGray",
-	SILVER = "silver",
-	DARKGRAY = "darkGray",
-	GRAY = "gray",
+	ALICEBLUE = "AliceBlue",
+	ANTIQUEWHITE = "AntiqueWhite",
+	BEIGE = "Beige",
+	BURLYWOOD = "BurlyWood",
+	CORNFLOWERBLUE = "CornflowerBlue",
+	DARKCYAN = "DarkCyan",
+	DARKKHAKI = "DarkKhaki",
+	GREY = "Grey",
 }
 
-export interface Bios {
-	label?: string,
-	ids?: string[],
+export enum Type_2 {
+	NONE = "None",
+	BOOK_NOW = "Book Now",
+	CALL_NOW = "Call Now",
+	CONTACT_US = "Contact Us",
+	SEND_MESSAGE = "Send Message",
+	USE_APP = "Use App",
+	PLAY_GAME = "Play Game",
+	SHOP_NOW = "Shop Now",
+	SIGN_UP = "Sign Up",
+	WATCH_VIDEO = "Watch Video",
+	SEND_EMAIL = "Send Email",
+	LEARN_MORE = "Learn More",
+	PURCHASE_GIFT_CARDS = "Purchase Gift Cards",
+	ORDER_NOW = "Order Now",
+	FOLLOW_PAGE = "Follow Page",
 }
 
-export interface ProductLists {
-	label?: string,
-	ids?: string[],
+export interface FacebookCallToAction {
+	type: Type_2,
+	value?: string,
 }
 
 export interface FeaturedMessage {
@@ -225,10 +262,65 @@ export enum PriceRange {
 	FOUR = "$$$$",
 }
 
+export interface RankTrackingCompetitors {
+	name: string,
+	website: string,
+}
+
+export enum RankTrackingFrequency {
+	WEEKLY = "Weekly",
+	MONTHLY = "Monthly",
+	QUARTERLY = "Quarterly",
+}
+
+export enum RankTrackingKeywords {
+	NAME = "Name",
+	PRIMARY_CATEGORY = "Primary Category",
+	SECONDARY_CATEGORY = "Secondary Category",
+}
+
+export enum RankTrackingQueryTemplates {
+	KEYWORD = "Keyword",
+	KEYWORD_ZIP = "Keyword Zip",
+	KEYWORD_CITY = "Keyword City",
+	KEYWORD_IN_CITY = "Keyword in City",
+	KEYWORD_NEAR_ME = "Keyword near me",
+	KEYWORD_CITY_STATE = "Keyword City State",
+}
+
+export enum RankTrackingSites {
+	GOOGLE_DESKTOP = "Google Desktop",
+	GOOGLE_MOBILE = "Google Mobile",
+	BING_DESKTOP = "Bing Desktop",
+	BING_MOBILE = "Bing Mobile",
+	YAHOO_DESKTOP = "Yahoo Desktop",
+	YAHOO_MOBILE = "Yahoo Mobile",
+}
+
 export interface ReservationUrl {
 	url?: string,
 	displayUrl?: string,
 	preferDisplayUrl?: boolean,
+}
+
+export interface ServiceArea {
+	places?: string[],
+}
+
+export enum Presentation {
+	BUTTON = "Button",
+	LINK = "Link",
+}
+
+export interface UberLink {
+	text?: string,
+	presentation: Presentation,
+}
+
+export interface UberTripBranding {
+	text: string,
+	url: string,
+	description: string,
 }
 
 export interface WebsiteUrl {
@@ -248,16 +340,25 @@ export default interface Location {
 	bingWebsiteOverride?: string,
 	blackOwnedBusiness?: boolean,
 	brunchHours?: Hours,
+	questionsAndAnswers?: boolean,
 	covid19InformationUrl?: string,
 	covidMessaging?: string,
 	deliveryHours?: Hours,
+	deliveryUrl?: string,
 	dineInHours?: Hours,
 	driveThroughHours?: Hours,
+	facebookAbout?: string,
 	facebookWebsiteOverride?: string,
+	frequentlyAskedQuestions?: FrequentlyAskedQuestions[],
 	fullyVaccinatedStaff?: boolean,
 	geomodifier?: string,
+	googleEntityRelationship?: GoogleEntityRelationship,
+	googleMyBusinessLabels?: string[],
+	googlePlaceId?: string,
+	googleShortName?: string,
 	happyHours?: Hours,
 	holidayHoursConversationEnabled?: boolean,
+	impressum?: string,
 	kitchenHours?: Hours,
 	landingPageUrl?: string,
 	linkedInUrl?: string,
@@ -271,9 +372,11 @@ export default interface Location {
 	proofOfVaccinationRequired?: boolean,
 	reviewResponseConversationEnabled?: boolean,
 	seniorHours?: Hours,
+	serviceAreaPlaces?: ServiceAreaPlaces[],
 	slug?: string,
 	takeoutHours?: Hours,
 	what3WordsAddress?: string,
+	yelpLinkedAccount?: any,
 	yelpWebsiteOverride?: string,
 	additionalHoursText?: string,
 	address: Address,
@@ -293,17 +396,34 @@ export default interface Location {
 	c_featuredFAQs?: EntityReference[],
 	c_offerings?: EntityReference[],
 	c_primaryColor?: C_primaryColor,
+	firstPartyReviewPage?: any,
+	reviewGenerationUrl?: any,
+	defaultReviewInviteTemplate?: any,
 	displayCoordinate?: Coordinate,
 	dropoffCoordinate?: Coordinate,
-	bios?: Bios,
-	productLists?: ProductLists,
 	emails?: string[],
+	facebookOverrideCity?: string,
+	facebookCoverPhoto?: Image,
+	facebookCallToAction?: FacebookCallToAction,
+	facebookDescriptor?: string,
 	facebookEmail?: string,
+	facebookLinkedAccount?: any,
+	facebookName?: string,
 	facebookPageUrl?: string,
+	facebookParentPageId?: string,
+	facebookProfilePhoto?: Image,
+	facebookStoreId?: string,
+	facebookVanityUrl?: string,
 	fax?: any,
 	featuredMessage?: FeaturedMessage,
+	foursquareLinkedAccount?: any,
 	photoGallery?: ComplexImage[],
 	geocodedCoordinate?: Coordinate,
+	gmbLinkedAccount?: any,
+	googleAccountId?: string,
+	googleAttributes?: any,
+	googleCoverPhoto?: Image,
+	googleProfilePhoto?: Image,
 	googleWebsiteOverride?: string,
 	instagramHandle?: string,
 	iosAppUrl?: string,
@@ -321,8 +441,18 @@ export default interface Location {
 	pickupCoordinate?: Coordinate,
 	priceRange?: PriceRange,
 	products?: string[],
+	alternateNames?: string[],
+	alternateWebsites?: string[],
+	rankTrackingCompetitors?: RankTrackingCompetitors[],
+	customKeywords?: string[],
+	rankTrackingEnabled?: boolean,
+	rankTrackingFrequency?: RankTrackingFrequency,
+	rankTrackingKeywords?: RankTrackingKeywords[],
+	rankTrackingQueryTemplates?: RankTrackingQueryTemplates[],
+	rankTrackingSites?: RankTrackingSites[],
 	reservationUrl?: ReservationUrl,
 	routableCoordinate?: Coordinate,
+	serviceArea?: ServiceArea,
 	services?: string[],
 	shortName35?: string,
 	shortName64?: string,
@@ -332,6 +462,9 @@ export default interface Location {
 	tollFreePhone?: any,
 	ttyPhone?: any,
 	twitterHandle?: string,
+	uberClientId?: string,
+	uberLink?: UberLink,
+	uberTripBranding?: UberTripBranding,
 	walkableCoordinate?: Coordinate,
 	websiteUrl?: WebsiteUrl,
 	yearEstablished?: number,

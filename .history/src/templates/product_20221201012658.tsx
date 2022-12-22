@@ -127,11 +127,9 @@ const Location: Template<TemplateRenderProps> = ({
     <div className="centered-container">
       <div className="section">
         <div className="mx-4 flex flex-col md:flex-row gap-3">
-          {primaryPhoto && (
-            <div className="w-full md:w-1/2">
-              <Image image={primaryPhoto}></Image>
-            </div>
-          )}
+          <div className="w-full md:w-1/2">
+            <Image image={primaryPhoto}></Image>
+          </div>
           <div className="w-full md:w-1/2 mt-4 md:mt-0 flex flex-col justify-evenly">
             <h1 className="text-2xl md:text-xl font-bold">{name}</h1>
             <div className="mt-4"> {richTextDescription}</div>

@@ -40,7 +40,6 @@ import { BsPhone } from "react-icons/bs";
 // import { Image } from "@yext/pages/components";
 import Carousel from "../components/Carousel";
 import ContactUsForm from "../components/contact-us-form";
-import { Image } from "@yext/pages/components";
 
 /**
  * Required when Knowledge Graph data is used for a template.

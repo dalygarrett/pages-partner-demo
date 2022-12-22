@@ -19,16 +19,9 @@ export interface ComplexImage {
 	clickthroughUrl?: string,
 }
 
-export default interface Faq {
-	answer?: string,
-	landingPageUrl?: string,
-	nudgeEnabled?: boolean,
-	primaryConversationContact?: any,
-	question: string,
-	slug?: string,
-	logo?: ComplexImage,
+export default interface Ce_offerings {
+	primaryPhoto?: ComplexImage,
+	richTextDescription?: string,
 	name: string,
-	keywords?: string[],
 	id: string,
-	timezone?: any,
 }

@@ -40,7 +40,6 @@ import { BsPhone } from "react-icons/bs";
 // import { Image } from "@yext/pages/components";
 import Carousel from "../components/Carousel";
 import ContactUsForm from "../components/contact-us-form";
-import { Image } from "@yext/pages/components";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -64,14 +63,14 @@ export const config: TemplateConfig = {
       "emails",
       "c_featuredFAQs.question",
       "c_featuredFAQs.answer",
-      "c_offerings.name",
-      "c_offerings.richTextDescription",
-      "c_offerings.primaryPhoto",
-      "c_bannerImage",
+      // "c_offerings.name",
+      // "c_offerings.richTextDescription",
+      // "c_offerings.primaryPhoto",
+      // "c_bannerImage",
       "c_primaryColor",
       "photoGallery",
       "paymentOptions",
-      "c_offerings.slug",
+      // "c_offerings.slug",
       "logo",
     ],
     // Defines the scope of entities that qualify for this stream.
@@ -156,9 +155,9 @@ const Location: Template<TemplateRenderProps> = ({
     mainPhone,
     description,
     geocodedCoordinate,
-    c_bannerImage,
+    // c_bannerImage,
     services,
-    c_offerings,
+    // c_offerings,
     c_featuredFAQs,
     paymentOptions,
     c_primaryColor,
@@ -198,11 +197,11 @@ const Location: Template<TemplateRenderProps> = ({
               </div>
             </div>
             <div className="flex flex-row gap-3 mt-4">
-              {c_bannerImage && (
+              {/* {c_bannerImage && (
                 <div className="rounded-full">
                   <Image image={c_bannerImage}></Image>
                 </div>
-              )}
+              )} */}
               <div className="w-full mx-4 hidden md:block">
                 {geocodedCoordinate && (
                   <StaticMap
