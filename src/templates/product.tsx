@@ -42,7 +42,7 @@
      // directly as props to the default exported function.
      fields: [
        "id",
-       "c_slug",
+       "slug",
      ],
      // Defines the scope of entities that qualify for this stream.
      filter: {
@@ -63,7 +63,7 @@
   * take on the form: featureName/entityId
   */
  export const getPath: GetPath<TemplateProps> = ({ document }) => {
-   return document.c_slug;
+   return document.slug;
  };
  
  /**
