@@ -179,78 +179,14 @@ const Location: Template<TemplateRenderProps> = ({
                   {address.city}, {address.region}
                 </h1>
               </div>
-              <div className=" hidden md:block">
-                <div className=" flex flex-col gap-2">
-                  <Cta
-                    buttonText="Shop now"
-                    url="#"
-                    className="primary-cta"
-                    backgroundColor={""}
-                  ></Cta>
-
-                  <Cta
-                    buttonText="Schedule appointment"
-                    url="#"
-                    className="secondary-cta"
-                    backgroundColor={""}
-                  ></Cta>
-                </div>
-              </div>
             </div>
-            <div className="flex flex-row gap-3 mt-4">
-              {c_bannerImage && (
-                <div className="rounded-full">
-                  <Image image={c_bannerImage}></Image>
-                </div>
-              )}
-              <div className="w-full mx-4 hidden md:block">
-                {geocodedCoordinate && (
-                  <StaticMap
-                    latitude={geocodedCoordinate.latitude}
-                    longitude={geocodedCoordinate.longitude}
-                    backgroundColor={""}
-                  ></StaticMap>
+            <div className="flex flex-row gap-3">
+                {c_bannerImage && (
+                  <div className="w-2/3 md:mr-auto md:ml-auto md:mt-auto md:mb-auto border-8 shadow-md rounded-lg">
+                    <Image image={c_bannerImage}></Image>
+                  </div>
                 )}
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row px-8 gap-3 mt-4 justify-between">
-              {hours && (
-                <div className="md:ml-auto md:mr-8">
-                  <div className="flex gap-3 items-center">
-                    <HoursText document={cpy}></HoursText>
-                    <span className=" hidden md:block">
-                      {showHours ? (
-                        <BsChevronUp
-                          onClick={() => setShowHours(!showHours)}
-                          className="mt-4 hover:cursor-pointer"
-                        />
-                      ) : (
-                        <BsChevronDown
-                          onClick={() => setShowHours(!showHours)}
-                          className="mt-4 hover:cursor-pointer"
-                        />
-                      )}
-                    </span>
-                  </div>
-                  <span className=" hidden md:block">
-                    {showHours && (
-                      <div className="mt-4 ml-4">
-                        <Hours title={"Store Hours"} hours={hours} />
-                      </div>
-                    )}
-                  </span>
-                  <div className="mt-4 md:mt-12 text-center  px-16 py-2 border bg-sky-700 hover:bg-sky-600 ">
-                    <Cta
-                      buttonText="Schedule Appointment"
-                      url="#"
-                      style="primary-cta"
-                      backgroundColor={""}
-                    ></Cta>
-                  </div>
-                </div>
-              )}
-              <div className="md:mr-auto md:ml-8 text-2xl text-gray-600 mt-4 w-full md:w-auto">
+              <div className="md:mr-auto md:ml-auto md:mt-auto md:mb-auto text-2xl text-gray-600 mt-4 w-full md:w-auto">
                 <div className="flex gap-2 w-full">
                   <div>
                     <IoLocationOutline className="mt-2" />
@@ -258,14 +194,6 @@ const Location: Template<TemplateRenderProps> = ({
                   <div>
                     <Contact address={address} phone=""></Contact>
                   </div>
-                </div>
-                <div className=" md:hidden block w-auto mt-4 text-center text-lg  px-16 py-2 border bg-sky-100 hover:bg-sky-600 ">
-                  <Cta
-                    buttonText="Get Directions "
-                    url="#"
-                    style="primary-cta"
-                    backgroundColor={""}
-                  ></Cta>
                 </div>
                 <div className="flex gap-3 mt-4 items-center">
                   <div className="">
@@ -279,6 +207,51 @@ const Location: Template<TemplateRenderProps> = ({
                         .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
                   </div>
                 </div>
+                <div className=" flex flex-col gap-4 p-4">
+                <div className="w-auto mt-6 text-center shadow-md px-16 py-2 border-2 border-black rounded-xl bg-gray-200 hover:bg-gray-300 ">
+                  <Cta
+                    buttonText="Get Directions"
+                    url="#"
+                    style="primary-cta"
+                    backgroundColor={""}
+                  ></Cta>
+                  </div>
+                  <div className="w-auto mt-6 text-center shadow-md px-16 py-2 border-2 border-black rounded-xl bg-gray-200 hover:bg-gray-300 ">
+                    <Cta
+                      buttonText="Call Now"
+                      url="#"
+                      style="primary-cta"
+                      backgroundColor={""}
+                    ></Cta>
+                    </div>
+                </div>
+              </div>
+            </div>
+    
+            <div className="flex flex-col md:flex-row px-8 gap-3 mt-4 justify-between">
+              {hours && (
+                <div className="md:ml-auto md:mr-auto md:mt-auto md:mb-auto">
+                  <div className="flex gap-3 items-center">
+                    <HoursText document={cpy}></HoursText>
+                  </div>
+                  <span className=" md:block">
+                    <Hours title={""} hours={hours} />
+                    {showHours && (
+                      <div className="mt-4 ml-4">
+                        <Hours title={"Store Hours"} hours={hours} />
+                      </div>
+                    )}
+                  </span>
+                </div>
+              )}
+              <div className="w-2/5 md:ml-auto md:mr-auto md:mt-auto md:mb-auto mx-4 hidden shadow-md md:block">
+                {geocodedCoordinate && (
+                  <StaticMap
+                    latitude={geocodedCoordinate.latitude}
+                    longitude={geocodedCoordinate.longitude}
+                    backgroundColor={""}
+                  ></StaticMap>
+                )}
               </div>
             </div>
           </div>
@@ -287,10 +260,10 @@ const Location: Template<TemplateRenderProps> = ({
         <div className="centered-container">
           <div className="section">
             {description && (
-              <div className="w-full md:w-2/2 bg-gray-200 mt-4">
+              <div className="w-full rounded-xl md:w-2/2 shadow-md bg-gray-200 mt-4">
                 <div className="p-4 w-full mx-auto text-center mb-10 ">
                   <h1 className="text-2xl font-bold border-b border-black mb-4 pb-4">
-                    About us
+                    About Us
                   </h1>
                   <div className="bg-grey-100 text-left mt-4">
                     {description}
@@ -319,7 +292,7 @@ const Location: Template<TemplateRenderProps> = ({
                 </div>
               </div>
             )} */}
-            <div className="mt-4 w-3/4 mx-auto">
+            <div className="mt-10 w-3/4 mx-auto">
               <ContactUsForm />
             </div>
           </div>

@@ -27,7 +27,7 @@ const ContactUsForm = () => {
   };
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <div className="bg-gray-200 p-6">
+      <div className="bg-gray-200 shadow-md rounded-xl p-10">
         <div className=" ">
           <div className="text-3xl mb-6 text-center ">Contact for a Quote</div>
 
@@ -52,7 +52,7 @@ const ContactUsForm = () => {
               <input
                 type="tel"
                 className="border-solid border-gray-400 border-2 p-3 md:text-xl w-full"
-                placeholder="Phone number"
+                placeholder="Phone Number"
                 name="phone_number"
               />
             </div>
@@ -77,7 +77,7 @@ const ContactUsForm = () => {
             <div className="col-span-2 text-right">
               <input
                 type="submit"
-                className="py-3 px-6 bg-gray-500 text-gray-200 font-bold w-full"
+                className="py-3 px-6 border-2 border-black bg-gray-400 hover:bg-gray-300 text-white rounded-xl font-bold w-full"
               ></input>
             </div>
           </div>
