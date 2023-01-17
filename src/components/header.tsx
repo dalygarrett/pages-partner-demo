@@ -38,7 +38,7 @@ const Header = (props:any) => {
             height="200"
           ></img>
           <div className="flex gap-x-10 text-lg font-semibold">{linkDoms}</div>
-          <div className="w-auto mt-6 text-center shadow-md px-16 py-2 border-2 border-black rounded-xl bg-gray-200 hover:bg-gray-300 ">
+          <div className="text-black w-auto mt-6 text-center shadow-md px-16 py-2 border-2 border-black rounded-xl bg-gray-200 hover:bg-gray-300 ">
                     <Cta
                       buttonText="Request a Quote"
                       url="#"

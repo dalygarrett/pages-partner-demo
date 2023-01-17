@@ -174,8 +174,8 @@ const Location: Template<TemplateRenderProps> = ({
           <div className="section">
             <div className="mx-4 flex flex-col md:flex-row justify-between">
               <div className="flex flex-col gap-3">
-                <h2 className="text-bold text-2xl">{name}</h2>
-                <h1 className="font-light text-2xl mb-4">
+                <h2 className="font-extrabold font-sans text-5xl">{name}</h2>
+                <h1 className="font-semibold font-sans text-2xl mb-4">
                   {address.city}, {address.region}
                 </h1>
               </div>
@@ -208,7 +208,7 @@ const Location: Template<TemplateRenderProps> = ({
                   </div>
                 </div>
                 <div className=" flex flex-col gap-4 p-4">
-                <div className="w-auto mt-6 text-center shadow-md px-16 py-2 border-2 border-black rounded-xl bg-gray-200 hover:bg-gray-300 ">
+                <div className="text-black w-auto mt-6 text-center shadow-md px-16 py-2 border-2 border-black rounded-xl bg-gray-200 hover:bg-gray-300 ">
                   <Cta
                     buttonText="Get Directions"
                     url="#"
@@ -216,7 +216,7 @@ const Location: Template<TemplateRenderProps> = ({
                     backgroundColor={""}
                   ></Cta>
                   </div>
-                  <div className="w-auto mt-6 text-center shadow-md px-16 py-2 border-2 border-black rounded-xl bg-gray-200 hover:bg-gray-300 ">
+                  <div className="text-black w-auto mt-6 text-center shadow-md px-16 py-2 border-2 border-black rounded-xl bg-gray-200 hover:bg-gray-300 ">
                     <Cta
                       buttonText="Call Now"
                       url="#"
