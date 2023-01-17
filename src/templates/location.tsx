@@ -174,8 +174,8 @@ const Location: Template<TemplateRenderProps> = ({
           <div className="section">
             <div className="mx-4 flex flex-col md:flex-row justify-between">
               <div className="flex flex-col gap-3">
-                <h2 className="text-light text-2xl">{name} in</h2>
-                <h1 className="font-bold text-2xl mb-4">
+                <h2 className="text-bold text-2xl">{name}</h2>
+                <h1 className="font-light text-2xl mb-4">
                   {address.city}, {address.region}
                 </h1>
               </div>
@@ -242,7 +242,7 @@ const Location: Template<TemplateRenderProps> = ({
                   </span>
                   <div className="mt-4 md:mt-12 text-center  px-16 py-2 border bg-sky-700 hover:bg-sky-600 ">
                     <Cta
-                      buttonText="Schedule appointment"
+                      buttonText="Schedule Appointment"
                       url="#"
                       style="primary-cta"
                       backgroundColor={""}
@@ -259,9 +259,9 @@ const Location: Template<TemplateRenderProps> = ({
                     <Contact address={address} phone=""></Contact>
                   </div>
                 </div>
-                <div className=" md:hidden block w-auto mt-4 text-center text-lg  px-16 py-2 border bg-sky-700 hover:bg-sky-600 ">
+                <div className=" md:hidden block w-auto mt-4 text-center text-lg  px-16 py-2 border bg-sky-100 hover:bg-sky-600 ">
                   <Cta
-                    buttonText="Get directions "
+                    buttonText="Get Directions "
                     url="#"
                     style="primary-cta"
                     backgroundColor={""}
@@ -279,12 +279,6 @@ const Location: Template<TemplateRenderProps> = ({
                         .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
                   </div>
                 </div>
-              </div>
-              <div className="md:mr-auto md:ml-8 text-2xl text-gray-600 mt-4 w-full md:w-auto">
-                <div className="text-xl font-bold mb-4">Services</div>
-                {nServices.map((item: string, index: any) => (
-                  <div key={index}>{item}</div>
-                ))}
               </div>
             </div>
           </div>
