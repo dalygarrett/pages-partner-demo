@@ -16,9 +16,6 @@ const Contact = (props: any) => {
           </div>
         </div>
       </div>
-      <div className=" hidden md:block w-auto mt-4 text-lg  px-16 py-2 border bg-sky-700 hover:bg-sky-600 ">
-        <Cta buttonText="Get directions " url="#" style="primary-cta" backgroundColor={""}></Cta>
-      </div>
     </>
   );
 };
